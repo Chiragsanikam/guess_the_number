@@ -4,7 +4,7 @@
 // document.querySelector('.number').textContent = 'hi';
 // document.querySelector('.score ').textContent = 30;
 
-const secretNumber = Math.trunc(Math.random() * 20) + 1;
+let secretNumber = Math.trunc(Math.random() * 20) + 1;
 
 let initialScore = 20;
 
@@ -48,4 +48,16 @@ document.querySelector(".check").addEventListener("click", function () {
       document.querySelector(".score").textContent = 0;
     }
   }
+});
+
+document.querySelector(".again").addEventListener("click", function () {
+  initialScore = 20;
+  document.querySelector(".score").textContent = initialScore;
+
+  secretNumber = Math.trunc(Math.random() * 20) + 1;
+  document.querySelector(".message").textContent = "start guessing........";
+  //   console.log(initialScore);
+  document.querySelector(".number").textContent = "?";
+  document.querySelector("body").style.backgroundColor = "#222";
+  document.querySelector(".number").style.width = "15rem";
 });
